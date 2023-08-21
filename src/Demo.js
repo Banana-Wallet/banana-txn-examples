@@ -27,6 +27,10 @@ function Demo() {
       chainId: "80001",
       paymasterUrl: `https://demo-paymaster.internal.candidelabs.com/mumbai/71c6bedc7c3d1c7b4773c70fb972707a`,
     },
+    {
+      chainId: "42161",
+      paymasterUrl: 'https://api.pimlico.io/v1/arbitrum/rpc?apikey=1849c85d-46c8-4bee-8a6d-d6a0cba4d445'
+    }
   ];
 
   useEffect(() => {
@@ -37,7 +41,7 @@ function Demo() {
     // console.log('this is signer', signer)
     const provider = new ethers.providers.Web3Provider(window.ethereum, "any");
 
-    const instance = new Banana(Chains.mumbai, signer, paymasterOptions);
+    const instance = new Banana(Chains.optimism, signer, paymasterOptions);
 
     setBananaInstance(instance);
   };
